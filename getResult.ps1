@@ -24,4 +24,6 @@ $Response = Invoke-WebRequest `
 
 # 返ってきた回答を表示します
 $Answer = ($Response.Content | ConvertFrom-Json).choices[0].message.content
+New-Item .\result.txt -Force
 Write-Output $Answer
+Set-Content result.txt $Answer
